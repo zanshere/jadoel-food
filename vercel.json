@@ -5,9 +5,15 @@
     }
   },
   "routes": [
-    { "src": "/(assets|uploads|public|css|js|images)/(.*)", "dest": "/$1/$2" },
-    { "src": "/(.*)", "dest": "/index.php" }
+    { "src": "/public/(.*)",  "dest": "/public/$1" },
+    { "src": "/admin/(.*)",   "dest": "/admin/$1" },
+    { "src": "/includes/(.*)", "dest": "/includes/$1" },
+    { "src": "/src/css/(.*)", "dest": "/src/css/$1" },
+    { "src": "/src/js/(.*)",  "dest": "/src/js/$1" },
+    { "src": "/assets/images/(.*)", "dest": "/assets/images/$1" },
+    { "src": "/(.*)",         "dest": "/index.php" }
   ],
+  "functionsDirectory": ".",
   "build": {
     "env": {
       "VERCEL_PHP_BUILD_RUNTIME": "vercel-php@0.7.3"
@@ -15,6 +21,5 @@
   },
   "projectSettings": {
     "framework": "other"
-  },
-  "functionsDirectory": "."
+  }
 }
