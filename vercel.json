@@ -1,11 +1,11 @@
 {
   "functions": {
-    "*.php": {
+    "index.php": {
       "runtime": "vercel-php@0.7.3"
     }
   },
   "routes": [
-    { "src": "/(assets|uploads|public)/(.*)", "dest": "/$1/$2" },
-    { "src": "/(.*)",  "dest": "/index.php" }
+    { "src": "/(assets|uploads|public|css|js|images)/(.*)", "dest": "/$1/$2" },
+    { "src": "/(.*)", "dest": "/index.php" }
   ]
 }
