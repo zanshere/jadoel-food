@@ -60,7 +60,7 @@ if (isset($_POST['regist'])) {
 
             $ext = pathinfo($_FILES['profil_image']['name'], PATHINFO_EXTENSION);
             $newFilename = uniqid('profile_', true) . '.' . $ext;
-            $upload_dir = __DIR__ . '/../assets/uploads/profiles/';
+            $upload_dir = __DIR__ . '/../uploads/profiles';
             $target_path = $upload_dir . $newFilename;
 
             if (!move_uploaded_file($_FILES['profil_image']['tmp_name'], $target_path)) {
